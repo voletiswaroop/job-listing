@@ -2,6 +2,8 @@
   "name": "job-listing",
   "version": "0.1.0",
   "private": true,
+  "description": "Swaroop Gupta Voleti Job listing react webapp",
+  "homepage": "https://voletiswaroop.github.io/job-listing",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
