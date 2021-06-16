@@ -16,12 +16,12 @@ const jobListing = () => {
       <li key={index}>
         <span className="job-title">
           {item['job-title'] && item['job-title'] ? item['job-title'] : '--'}
-          <span className="job-role" dangerouslySetInnerHTML={{ __html: item.role && item.role ? item.role : '--' }}></span>
+          <span className="job-role" dangerouslySetInnerHTML={{ __html: item && item.role ? item.role : '--' }}></span>
         </span>
-        <span className={`status ${item.status}`}><i className="fas fa-circle"></i>{item.status && item.status ? item.status : '--'}</span>
-        <span className="posted">{item.posted && item.posted ? item.posted : '--'}</span>
+        <span className={`status ${item.status}`}><i className="fas fa-circle"></i>{item && item.status ? item.status : '--'}</span>
+        <span className="posted">{item && item.posted ? item.posted : '--'}</span>
         <span className="applicants">{
-          item.applicants && item.applicants.length ?
+          item && item.applicants.length ?
             <div><i className="far fa-user-circle"></i><i className="far fa-user-circle"></i><i className="far fa-user-circle"></i>
               <span>+{+item.applicants.length - 3}</span> </div>
             : '--'}</span>
