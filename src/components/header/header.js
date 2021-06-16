@@ -17,7 +17,7 @@ const header = () => {
         <i className="fas fa-sign-out-alt"></i>
       </div>
     </header>
-  );
+  )
 }
 
 export default header;

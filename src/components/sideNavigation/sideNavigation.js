@@ -13,7 +13,7 @@ const sideNavigation = () => {
         <div data-set-id="connections"><i className="fas fa-user-friends"></i>Connections</div>
       </div>
     </aside>
-  );
+  )
 }
 
 export default sideNavigation;

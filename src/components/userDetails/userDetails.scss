@@ -1,33 +1,38 @@
+@import '../../assests/globalStyles/mixins.scss';
+@import '../../assests/globalStyles/variables.scss';
+
 .userinfo-wrapper {
 
   * {
-    color: var(--white);
+    color: $white;
     display: block;
   }
 
   i {
     font-size: 80px;
-    margin-bottom: 15px;
+    // margin-bottom: $xsmall;
+    @include paddingMargin(margin, bottom, $xxsmall);
   }
 
   div {
-    padding: 20px 50px;
+    padding: $small $medium;
   }
 
   button {
     background: transparent;
-    border: 1px solid var(--primary-text-color);
-    border-radius: 20px;
-    margin: 15px auto;
-    padding: 5px 15px;
+    border: 1px solid $primary-text-color;
+    border-radius: $small;
+    margin: $xsmall auto;
+    padding: $xxsmall $xsmall;
   }
 
   .role {
-    color: var(--primary-text-color);
-    margin-top: 5px;
+    color: $primary-text-color;
+    // margin-top: $xxsmall;
+    @include paddingMargin(margin, top, $xxsmall);
   }
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: $tablet-break-point) {
     width: 35%;
     display: flex;
     flex-wrap: wrap;
@@ -36,13 +41,14 @@
 
     i {
       font-size: 35px;
-      margin-bottom: 15px;
+      margin-bottom: $xsmall;
+      @include paddingMargin(margin, bottom, $xsmall);
       float: left;
     }
 
     button {
-      padding: 5px 10px;
-      margin: 5px 0;
+      padding: $xxsmall 10px;
+      margin: $xxsmall 0;
     }
   }
 }

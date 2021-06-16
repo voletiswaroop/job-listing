@@ -1,3 +1,6 @@
+@import '../../assests/globalStyles/mixins.scss';
+@import '../../assests/globalStyles/variables.scss';
+
 .jobs-listing-wrapper {
   overflow: hidden;
   width: 80%;
@@ -7,46 +10,47 @@
   }
 
   .jobs-listing-container {
-    background-color: var(--secondary-color);
-    min-height: calc(100vh - 120px);
+    background-color: $secondary-color;
+    min-height: calc(100vh - 1 $small);
     list-style: none;
     padding: 30px 3%;
     overflow-y: auto;
 
     .title {
-      font-size: 20px;
+      font-size: $small;
     }
 
     .add-new {
-      color: var(--white);
-      background-color: var(--success);
+      color: $white;
+      background-color: $success;
       border: 0;
-      padding: 5px 15px;
+      padding: $xxsmall $xsmall;
       float: right;
-      border-radius: 20px;
+      border-radius: $small;
     }
 
     ul {
-      background-color: var(--white);
+      background-color: $white;
       box-shadow: 0 2px 4px 0 hsla(0, 0%, 85%, .5);
       clear: both;
-      margin-top: 20px;
+      // margin-top: $small;
+      @include paddingMargin(margin, top, $small);
 
       .table-title {
-        background-color: var(--third-color);
+        background-color: $third-color;
         padding: 10px 5%;
 
         .job-title,
         span {
-          color: var(--secondary-text-color);
+          color: $secondary-text-color;
         }
       }
 
       li {
         display: grid;
         justify-content: space-between;
-        padding: 20px 5%;
-        border-bottom: 1px solid var(--third-color);
+        padding: $small 5%;
+        border-bottom: 1px solid $third-color;
         align-items: center;
         transition: all 0.3s ease-in-out;
         grid-template-columns: 200px 90px 150px 130px 60px;
@@ -61,35 +65,37 @@
         }
 
         .job-title {
-          color: var(--primary-text-color);
+          color: $primary-text-color;
           width: 12.5vw;
 
           .job-role {
             display: block;
-            margin-top: 3px;
-            color: var(--secondary-text-color);
+            // margin-top: 3px;
+            @include paddingMargin(margin, top, 3px);
+            color: $secondary-text-color;
           }
         }
 
         .status {
           width: 9vw;
           max-width: 56px;
-          border: 1px solid var(--third-color);
-          border-radius: 20px;
-          padding: 5px 15px;
+          border: 1px solid $third-color;
+          border-radius: $small;
+          padding: $xxsmall $xsmall;
           text-transform: capitalize;
 
           i {
             font-size: 10px;
-            margin-right: 5px;
+            margin-right: $xxsmall;
+            @include paddingMargin(margin, right, $xxsmall);
           }
 
           &.active i {
-            color: var(--success);
+            color: $success;
           }
 
           &.draft i {
-            color: var(--danger);
+            color: $danger;
           }
         }
 
@@ -101,11 +107,12 @@
 
         .applicants {
           span {
-            color: var(--primary-text-color);
+            color: $primary-text-color;
           }
 
           i {
-            margin-right: 5px;
+            // margin-right: $xxsmall;
+            @include paddingMargin(margin, right, $xxsmall);
           }
         }
 
@@ -122,8 +129,8 @@
             display: none;
             position: absolute;
             width: 85px;
-            background: var(--white);
-            padding: 15px 25px;
+            background: $white;
+            padding: $xsmall 25px;
             left: 50%;
             transform: translate(-50%, 0px);
             box-shadow: 0 0px 3px 3px hsla(0, 0%, 85%, .5);
@@ -139,17 +146,17 @@
               height: 0;
               border-left: 10px solid transparent;
               border-right: 10px solid transparent;
-              border-bottom: 10px solid var(--white);
+              border-bottom: 10px solid $white;
               top: -10px;
             }
 
             span {
               display: block;
-              color: var(--secondary-text-color);
+              color: $secondary-text-color;
 
               i {
-                color: var(--primary-text-color);
-                margin: 0 5px 10px 0;
+                color: $primary-text-color;
+                margin: 0 $xxsmall 10px 0;
               }
             }
           }
@@ -158,7 +165,7 @@
     }
   }
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: $tablet-break-point) {
     width: 100%;
     position: relative;
 
@@ -166,7 +173,8 @@
       padding: 10px 3%;
 
       .add-new {
-        margin-left: 30px;
+        // margin-left: 30px;
+        @include paddingMargin(margin, left, 30px);
         float: none;
       }
 
@@ -185,7 +193,8 @@
           width: auto;
           border: 0;
           font-size: 0;
-          padding: 0;
+          // padding: 0;
+          @include paddingMargin(padding, all, 0);
         }
 
         .options .options-subset {
@@ -212,7 +221,7 @@
         position: absolute;
         width: 100%;
         height: 3px;
-        background-color: var(--primary-color);
+        background-color: $primary-color;
         border-radius: 9px;
         right: 0;
         transition: all .5s ease;
@@ -227,7 +236,7 @@
         }
 
         &:nth-child(3) {
-          top: 20px;
+          top: $small;
         }
       }
 

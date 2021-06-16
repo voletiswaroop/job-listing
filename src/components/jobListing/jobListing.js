@@ -56,7 +56,7 @@ const jobListing = () => {
         </ul>
       </section>
     </section>
-  );
+  )
 }
 
 export default jobListing;

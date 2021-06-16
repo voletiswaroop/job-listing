@@ -1,38 +1,44 @@
+@import '../../assests/globalStyles/mixins.scss';
+@import '../../assests/globalStyles/variables.scss';
+
 .header-wrapper {
-  background: var(--white);
+  background: $white;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  padding: 20px 3% 0;
+  padding: $small 3% 0;
 
   i {
-    color: var(--third-color);
+    color: $third-color;
     cursor: pointer;
   }
 
   a {
-    color: var(--secondary-†ext-color);
+    color: $secondary-text-color;
     display: inline-block;
-    margin-right: 20px;
-    padding-bottom: 20px;
+    // margin-right: $small;
+    @include paddingMargin(margin, right, $small);
+    // padding-bottom: $small;
+    @include paddingMargin(padding, bottom, $small);
     text-decoration: none;
     font-weight: bold;
 
     &.active {
-      border-bottom: 2px solid var(--primary-text-color);
-      color: var(--primary-text-color);
+      border-bottom: 2px solid $primary-text-color;
+      color: $primary-text-color;
     }
   }
 
   .header-extras>span {
-    margin: 0 20px;
+    margin: 0 $small;
     position: relative;
 
     sup {
-      background: var(--primary-text-color);
-      color: var(--white);
+      background: $primary-text-color;
+      color: $white;
       border-radius: 50%;
-      padding: 2px;
+      // padding: 2px;
+      @include paddingMargin(padding, all, 2px);
       font-size: 7px;
       position: absolute;
       top: -5px;
@@ -43,9 +49,9 @@
     }
   }
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: $tablet-break-point) {
     flex-direction: column;
-    padding: 50px 20px;
+    padding: $medium $small;
     text-align: right;
     position: absolute;
     width: calc(100% - 40px);
@@ -62,7 +68,7 @@
     .navigation {
       display: flex;
       flex-direction: column;
-      padding: 20px 0;
+      padding: $small 0;
 
       a {
         margin: 0 0 10px;
